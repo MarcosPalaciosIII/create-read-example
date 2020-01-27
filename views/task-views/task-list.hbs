@@ -2,8 +2,10 @@
 
 <div class="">
     {{#each tasks}}
-        <div class="">
-            <a href="/task-details/{{this._id}}">{{this.title}} : {{this.priority}}</a>
-        </div>
+    <div class="">
+        {{!-- this is were we add a value for the req.params.taskId that we created for a get route. Params are usually found in the URL and set via a variable that is set by adding : to the front of the variable you assign. --}}
+        <a href="/task-details/{{this._id}}">{{this.title}} : {{this.priority}}</a>
+        {{!-- in this case, we use the taskId param in order to get a unique id in which to search the database to get the correct information for the task that we want. --}}
+    </div>
     {{/each}}
 </div>
